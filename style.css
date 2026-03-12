@@ -5,7 +5,7 @@ body, html {
     justify-content: center;
     align-items: center;
     margin: 50px;
-    font-family: young-serif, serif;
+    font-family: outfit, sans-serif;
     gap: 20px;
 }
 
@@ -29,12 +29,71 @@ body, html {
     border-radius: 20px;
 }
 
-h1 {
-    font-size: 40px;
+h1, h2 {
+    font-family: young-serif, serif;
     margin-bottom: 0px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 30px;
+    color: hsl(14, 45%, 36%);
+}
+
+ul, ol {
+    display: flex;
+    list-style: none;
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
+    counter-reset: li;
+}
+
+ul li::before {
+    content: "•";
+    color: hsl(14, 45%, 36%);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+ol li::before {
+    content: counter(li)".";
+    counter-increment: li;
+    color: hsl(14, 45%, 36%);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 .recipe-image {
     width: 100%;
     border-radius: 20px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid hsl(30, 18%, 87%);
+    margin: 20px 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    padding: 15px;
+}
+
+tr {
+    border-bottom: 2px solid hsl(30, 18%, 87%);
+}
+
+.table-color {
+    color: hsl(14, 45%, 36%);
+    font-weight: bold;
 }
